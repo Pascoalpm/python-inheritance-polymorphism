@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+dist/
+build/
+*.egg-info/
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+
+# PyCharm
+.idea/
+*.iml
+.vscode/
+.mypy_cache/
+workspace.xml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# uv
+uv.lock
+
+# PDF reports
+doc/*.pdf

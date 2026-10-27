@@ -1,0 +1,45 @@
+[project]
+name = "lab4-oop"
+version = "0.1.0"
+description = "Laboratory work 4: Inheritance and Polymorphism"
+requires-python = ">=3.10"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.1.14",
+    "black>=23.9.1",
+    "isort>=5.12.0",
+    "mypy>=1.7.1",
+    "taskipy>=1.12.0",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
+
+[tool.taskipy.tasks]
+lint = "ruff check ."
+format = "black . && isort ."
+check = "mypy ."
+test = "pytest -q"
+all = "task format && task lint && task check && task test"
